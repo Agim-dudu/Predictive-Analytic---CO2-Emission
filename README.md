@@ -261,7 +261,7 @@ Pada visualisasi diatas dapat disimpulkan:
 
 untuk lebih jelasnya kita akan melihat dengan correlation matrix pada gambar dibawah.
 
-![alt text](image-17.png)
+![alt text](https://github.com/Agim-dudu/Predictive-Analytic---CO2-Emission/blob/main/Assets/image-17.png?raw=true)
 
 Berdasarkan matriks korelasi untuk fitur numerik yang ditampilkan:
 
