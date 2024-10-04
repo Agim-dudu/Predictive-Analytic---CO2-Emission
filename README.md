@@ -2,37 +2,29 @@
 
 ## Domain Proyek : Lingkungan
 
-Menurut World Health Organization (WHO), stroke adalah kondisi gangguan fungsi otak yang terjadi secara tiba-tiba, ditandai dengan gejala klinis yang bisa bersifat lokal maupun menyeluruh, dan berlangsung selama 24 jam atau lebih [_(N. Permatasar, 2020)_](https://jurnalsandihusada.polsaka.ac.id/JIKSH/article/view/273). Statistik global mengenai penyakit stroke menunjukkan bahwa sekitar 15 juta orang di dunia mengalami stroke setiap tahun, dan satu dari enam orang di seluruh dunia diperkirakan akan terkena stroke [_(N. P. A. W. Suwaryo, 2019)_](http://journal.stikeskendal.ac.id/index.php/Keperawatan/article/view/530). Kasus stroke di Indonesia terdeteksi sebanyak 43,1% pada kelompok usia 75 tahun ke atas dan 0,2% pada kelompok usia 15-24 tahun oleh tenaga kesehatan [_(B. Tamam, 2020)_](http://journal.stikeskendal.ac.id/index.php/Keperawatan/article/view/530).
 
-Di Indonesia, menurut diagnosis tenaga kesehatan, prevalensi stroke mencapai 7 per mil, sedangkan angka untuk gejala stroke adalah 12,1 per mil. Berdasarkan data dari tenaga kesehatan, prevalensi di Sulawesi Utara adalah 10,8%, sedangkan di D.I. Yogyakarta mencapai 10,3%. Provinsi DKI Jakarta dan Bangka Belitung memiliki prevalensi stroke masing-masing sebesar 9,7 per mil. Sementara itu, gejala stroke tertinggi ditemukan di Sulawesi Selatan dengan angka 17,9%, diikuti oleh D.I. Yogyakarta sebesar 16,9%, dan Sulawesi Tengah sebesar 16,6%.Prevalensi stroke di Jawa Timur mencapai 16 per mil. Di Kalimantan Selatan, prevalensi penderita stroke yang terdiagnosis oleh tenaga kesehatan adalah 9,2%, sedangkan untuk yang terdiagnosis dengan gejala oleh tenaga kesehatan mencapai 14,5% [_(A Byna, 2020)_](https://jurnal.atmaluhur.ac.id/index.php/sisfokom/article/view/1023).
+Perubahan iklim global telah menjadi masalah penting yang berdampak pada ekosistem, kesehatan manusia, dan ekonomi di seluruh dunia. Salah satu penyebab utama perubahan iklim adalah emisi gas rumah kaca, khususnya karbon dioksida (CO2), yang dihasilkan oleh berbagai kegiatan manusia, termasuk sektor transportasi [_(Jainal et al., 2022)_](https://jurnal.ugn.ac.id/index.php/jurnalnauli/article/view/921/701). Kendaraan bermotor adalah penyumbang utama emisi CO2, terutama di daerah perkotaan yang memiliki lalu lintas yang padat. Oleh karena itu, pengukuran yang tepat dan efisien terhadap jumlah emisi CO2 dari kendaraan bermotor sangat penting untuk merumuskan strategi mitigasi yang sesuai [_(Dita et al., 2019)_](https://purejournal.ub.ac.id/index.php/pure/article/view/385).
 
-Hasil analisis dari Dinas Kesehatan Provinsi Kalimantan Selatan menunjukkan bahwa prevalensi stroke meningkat seiring dengan bertambahnya usia, dengan mayoritas penderita adalah perempuan. Faktor-faktor yang berkontribusi juga termasuk tingkat pendidikan yang rendah dan tempat tinggal di daerah pedesaan. Selain itu, penyakit stroke sangat rentan terjadi pada individu yang tidak bekerja.[_(A Byna, 2020)_](https://jurnal.atmaluhur.ac.id/index.php/sisfokom/article/view/1023).
-
-Prognosis untuk penyakit stroke umumnya adalah sembuh, namun sering kali disertai dengan kecacatan. Di Kalimantan Selatan, khususnya di Kota Banjarmasin, angka kejadian stroke mencapai 4.031 kasus, di mana banyak yang sembuh namun masih mengalami gejala sisa. Gejala sisa ini membuat kualitas hidup penderita stroke di Kota Banjarmasin menjadi rendah, terutama karena kurangnya dukungan dari keluarga [_(O Oktovin, 2020)_](https://journal.stikessuakainsan.ac.id/index.php/jksi/article/view/213). Selain itu, pemanfaatan teknologi, terutama di bidang ilmu kesehatan, dengan menggunakan pemodelan Machine Learning semakin diperkuat, karena pembelajaran mesin dapat mempermudah dalam melakukan prediksi dan penanganan penyakit [_(JN Heo, 2019)_](https://www.ahajournals.org/doi/abs/10.1161/STROKEAHA.118.024293).
-
-
+Melalui Analisis yang dilakukan ini, diharapkan dapat ditemukan model yang tidak hanya akurat tetapi juga mudah diimplementasikan  di  berbagai  konteks,  membantu dalam  upaya  global untuk mengurangi emisi CO2 kendaraan. Analisis ini juga akan menyoroti pentingnya pemahaman mendalam tentang faktor-faktor yang mempengaruhi emisi kendaraan, memberikan wawasan yang berharga untuk pengembangan kebijakan lingkungan yang lebih efektif.
 
 ## Business Understanding
 
 ### Problem Statements
 
 Rumusan masalah dari masalah latar belakang diatas adalah :
-- Dari banyaknya fitur, fitur apa yang memiliki pengaruh pada diagnosa penyakit stroke?
-- Bagaimana mengetahui pasien memiliki penyakit stroke berdasarkan riwayat dari variabel-variabel kesehatan yang ada?
-- Bagaimana meningkatkan akurasi model machine learning untuk diagnosa penyakit stroke?
+- Dari berbagai fitur yang ada, fitur mana yang paling berpengaruh terhadap emisi CO2 yang dihasilkan oleh kendaraan?
+- Bagaimana mengetahui banyak emisi CO2 yang dihasilkan oleh kendaraan berdasarkan riwayat dari fitur-fitur yang ada?
 
 ### Goals
 
 tujuan untuk menyelesaikan permasalahan diatas adalah:
-- Mengetahui fitur yang paling berkorelasi untuk diagnosa stroke.
-- Membuat model machine learning yang dapat memprediksi harga diamonds seakurat mungkin berdasarkan variable-variable yang ada.
-- Menambahkan berbagai metode pada algoritma machine learning untuk mendapatkan hasil matrix evaluasi yang tinggi.
+- Mengetahui fitur yang paling berkorelasi dengan emisi CO2 yang dihasilkan oleh kendaraan.
+- Membuat model machine learning yang dapat memprediksi seberapa banyak emisi CO2 yang dihasilkan oleh kendaraan secara akurat berdasarkan fitur-fitur yang ada.
 
 
     ### Solution statements
-    - Melakukan analisa pada data untuk dapat memahami data yang ada dengan menerapkan teknik visualisasi data untuk mengetahui korelasi antar data penting untuk memahami hubungan data target dan data fitur.
-    - Menggunakan berbagai algoritma machine learning yang bertujuan untuk mengkomparasi dan mendapatkan model atau algoritma yang memiliki tingkat akurasi yang paling tinggi, sehingga prediksi penyakit jantung memiliki akurasi yang tinggi.
-    - menerapkan berpagai metode seperti tuning parameter, teknik sampling hingga algoritma ensamble learning untuk mendapatkan model dengan hasil matrix evaluasi tertinggi
+    - Melakukan analisis pada data untuk memahami fitur-fitur yang mempengaruhi emisi CO2, dengan menerapkan teknik visualisasi data guna mengetahui korelasi antar fitur dan memahami hubungan antara data target (label) dan fitur lainnya.
+    - Menggunakan berbagai algoritma machine learning untuk membandingkan performa model, dengan tujuan mendapatkan model atau algoritma yang memiliki akurasi prediksi tertinggi dalam memperkirakan jumlah emisi CO2 yang dihasilkan oleh kendaraan.-
 
 ## Data Understanding
 di website kaggle diketahui bahwa Dataset ini menangkap detail bagaimana emisi CO2 dari kendaraan dapat bervariasi dengan fitur-fitdr yang berbeda. Dataset ini diambil dari situs data terbuka resmi Pemerintah Kanada. Ini adalah versi yang telah dikompilasi dan berisi data selama 7 tahun. Terdapat total 7385 baris dan 12 kolom. Ada beberapa singkatan yang digunakan untuk menggambarkan fitur-fitur. Saya mencantumkannya di sini, dan hal yang sama dapat ditemukan di lembar Deskripsi Data.
