@@ -2,6 +2,7 @@
 
 ## Domain Proyek : Lingkungan
 
+![Image Emission C02](https://png.pngtree.com/png-clipart/20230925/original/pngtree-the-vehicle-emits-copious-amounts-of-co2-a-harmful-greenhouse-gas-png-image_12784556.png)
 
 Perubahan iklim global telah menjadi masalah penting yang berdampak pada ekosistem, kesehatan manusia, dan ekonomi di seluruh dunia. Salah satu penyebab utama perubahan iklim adalah emisi gas rumah kaca, khususnya karbon dioksida (CO2), yang dihasilkan oleh berbagai kegiatan manusia, termasuk sektor transportasi [_(Jainal et al., 2022)_](https://jurnal.ugn.ac.id/index.php/jurnalnauli/article/view/921/701). Kendaraan bermotor adalah penyumbang utama emisi CO2, terutama di daerah perkotaan yang memiliki lalu lintas yang padat. Oleh karena itu, pengukuran yang tepat dan efisien terhadap jumlah emisi CO2 dari kendaraan bermotor sangat penting untuk merumuskan strategi mitigasi yang sesuai [_(Dita et al., 2019)_](https://purejournal.ub.ac.id/index.php/pure/article/view/385).
 
