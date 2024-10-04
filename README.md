@@ -544,7 +544,4 @@ yi = nilai sebenarnya
 y_pred = nilai prediksi
 
 
-## Daftar Referensi:
-
-
 
