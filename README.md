@@ -691,11 +691,37 @@ y_pred = nilai prediksi
 
   - Dari tabel di atas, dapat dilihat bahwa setiap model menghasilkan prediksi yang bervariasi untuk setiap nilai aktual (y_true). Model K-Nearest Neighbor (KNN) dan Decision Tree memberikan prediksi yang cukup dekat dengan nilai aktual pada beberapa data, sementara Linear Regression dan Random Forest juga menunjukkan hasil yang kompetitif. Model AdaBoost dengan Random Forest (boosting_RF) tampaknya menghasilkan prediksi yang lebih konsisten, dengan kesalahan relatif yang lebih kecil pada nilai prediksi dibandingkan dengan beberapa model lainnya. Secara keseluruhan, performa model dapat bervariasi tergantung pada karakteristik data dan hubungan yang ada antara fitur dan target.
 
+<<<<<<< HEAD
 ## Kesimpulan
 Dari hasil analisis dan evaluasi yang telah dilakukan, dapat disimpulkan bahwa model yang diusulkan berhasil menjawab kedua rumusan masalah yang diajukan. Pertama, melalui analisis multivariate, model mengidentifikasi bahwa Engine Size, Fuel Consumption City, Fuel Consumption Hwy, dan Fuel Consumption Comb merupakan fitur-fitur yang paling berpengaruh terhadap emisi CO2 yang dihasilkan oleh kendaraan. Kedua, model mampu memprediksi seberapa banyak emisi CO2 yang dihasilkan oleh kendaraan berdasarkan fitur-fitur tersebut dengan akurasi yang baik. Dalam pencapaian goals, model yang dikembangkan mencapai tujuan yang diharapkan, yaitu mengetahui fitur yang paling berkorelasi dengan emisi CO2 dan membuat model machine learning yang dapat memprediksi emisi CO2 secara akurat. Hasil evaluasi menunjukkan bahwa model Random Forest dan AdaBoost dengan Random Forest memiliki kesalahan MSE yang rendah, menandakan bahwa mereka efektif dalam melakukan prediksi. Dampak dari solusi yang diterapkan, termasuk analisis visualisasi data dan penerapan berbagai algoritma machine learning, berdampak positif dalam memberikan pemahaman yang lebih mendalam tentang hubungan antar fitur dan emisi CO2. Ini tidak hanya membantu dalam memahami struktur data, tetapi juga dalam pengambilan keputusan bisnis. Misalnya, produsen kendaraan dapat menggunakan informasi ini untuk merancang kendaraan yang lebih ramah lingkungan dengan mempertimbangkan fitur-fitur yang berpengaruh terhadap emisi CO2.
 
 ## Referensi
 
 IMPLEMENTASI ALGORITMA REGRESI LINEAR UNTUK MENGUKUR TINGKAT PENEGLUARAN CO2 PADA KENDARAAN BERMOTOR [_( Link Google Scholar )_](https://journal.arteii.or.id/index.php/Mars/article/view/132)
+=======
+**Formula Mean Squared Error dan cara Mean Squared Error bekerja** 
+
+formula Mean Squared Error :
+
+![alt text](https://github.com/Agim-dudu/Predictive-Analytic---CO2-Emission/blob/main/Assets/image-21.png?raw=true)
+
+
+**Bagaimana cara Mean Squared Error bekerja?**
+
+Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.
+
+- MSE mengukur rata-rata dari kuadrat selisih antara nilai yang diprediksi oleh model dan nilai aktual (ground truth). Rumus MSE pada gambar diatas.
+
+
+Keterangan:
+
+N = jumlah dataset
+
+yi = nilai sebenarnya
+
+y_pred = nilai prediksi
+
+
+>>>>>>> 26f0e98c2b95a55b73e48eabd84426c246cac89b
 
 EMISI CO2 KENDARAAN BERMOTOR KAWASAN ALUN-ALUN KOTA BATU [_( Link Google Scholar )_](https://purejournal.ub.ac.id/index.php/pure/article/view/385)
