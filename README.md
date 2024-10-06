@@ -2,8 +2,9 @@
 
 ## Domain Proyek : Lingkungan
 
+![Image Emission C02](https://png.pngtree.com/png-clipart/20230925/original/pngtree-the-vehicle-emits-copious-amounts-of-co2-a-harmful-greenhouse-gas-png-image_12784556.png)
 
-Perubahan iklim global telah menjadi masalah penting yang berdampak pada ekosistem, kesehatan manusia, dan ekonomi di seluruh dunia. Salah satu penyebab utama perubahan iklim adalah emisi gas rumah kaca, khususnya karbon dioksida (CO2), yang dihasilkan oleh berbagai kegiatan manusia, termasuk sektor transportasi [_(Jainal et al., 2022)_](https://jurnal.ugn.ac.id/index.php/jurnalnauli/article/view/921/701). Kendaraan bermotor adalah penyumbang utama emisi CO2, terutama di daerah perkotaan yang memiliki lalu lintas yang padat. Oleh karena itu, pengukuran yang tepat dan efisien terhadap jumlah emisi CO2 dari kendaraan bermotor sangat penting untuk merumuskan strategi mitigasi yang sesuai [_(Dita et al., 2019)_](https://purejournal.ub.ac.id/index.php/pure/article/view/385).
+Perubahan iklim global telah menjadi masalah penting yang berdampak pada ekosistem, kesehatan manusia, dan ekonomi di seluruh dunia. Salah satu penyebab utama perubahan iklim adalah emisi gas rumah kaca, khususnya karbon dioksida (CO2), yang dihasilkan oleh berbagai kegiatan manusia, termasuk sektor transportasi [_(Asgaryansyah., 2022)_](https://journal.arteii.or.id/index.php/Mars/article/view/132). Kendaraan bermotor adalah penyumbang utama emisi CO2, terutama di daerah perkotaan yang memiliki lalu lintas yang padat. Oleh karena itu, pengukuran yang tepat dan efisien terhadap jumlah emisi CO2 dari kendaraan bermotor sangat penting untuk merumuskan strategi mitigasi yang sesuai [_(Dita et al., 2019)_](https://purejournal.ub.ac.id/index.php/pure/article/view/385).
 
 Melalui Analisis yang dilakukan ini, diharapkan dapat ditemukan model yang tidak hanya akurat tetapi juga mudah diimplementasikan  di  berbagai  konteks,  membantu dalam  upaya  global untuk mengurangi emisi CO2 kendaraan. Analisis ini juga akan menyoroti pentingnya pemahaman mendalam tentang faktor-faktor yang mempengaruhi emisi kendaraan, memberikan wawasan yang berharga untuk pengembangan kebijakan lingkungan yang lebih efektif.
 
@@ -22,9 +23,9 @@ tujuan untuk menyelesaikan permasalahan diatas adalah:
 - Membuat model machine learning yang dapat memprediksi seberapa banyak emisi CO2 yang dihasilkan oleh kendaraan secara akurat berdasarkan fitur-fitur yang ada.
 
 
-    ### Solution statements
-    - Melakukan analisis pada data untuk memahami fitur-fitur yang mempengaruhi emisi CO2, dengan menerapkan teknik visualisasi data guna mengetahui korelasi antar fitur dan memahami hubungan antara data target (label) dan fitur lainnya.
-    - Menggunakan berbagai algoritma machine learning untuk membandingkan performa model, dengan tujuan mendapatkan model atau algoritma yang memiliki akurasi prediksi tertinggi dalam memperkirakan jumlah emisi CO2 yang dihasilkan oleh kendaraan.-
+### Solution statements
+  - Melakukan analisis pada data untuk memahami fitur-fitur yang mempengaruhi emisi CO2, dengan menerapkan teknik visualisasi data guna mengetahui korelasi antar fitur dan memahami hubungan antara data target (label) dan fitur lainnya.
+  - Menggunakan berbagai algoritma machine learning untuk membandingkan performa model, dengan tujuan mendapatkan model atau algoritma yang memiliki akurasi prediksi tertinggi dalam memperkirakan jumlah emisi CO2 yang dihasilkan oleh kendaraan.
 
 ## Data Understanding
 di website kaggle diketahui bahwa Dataset ini menangkap detail bagaimana emisi CO2 dari kendaraan dapat bervariasi dengan fitur-fitdr yang berbeda. Dataset ini diambil dari situs data terbuka resmi Pemerintah Kanada. Ini adalah versi yang telah dikompilasi dan berisi data selama 7 tahun. Terdapat total 7385 baris dan 12 kolom. Ada beberapa singkatan yang digunakan untuk menggambarkan fitur-fitur. Saya mencantumkannya di sini, dan hal yang sama dapat ditemukan di lembar Deskripsi Data.
@@ -260,7 +261,7 @@ Pada visualisasi diatas dapat disimpulkan:
 
 untuk lebih jelasnya kita akan melihat dengan correlation matrix pada gambar dibawah.
 
-![alt text](image-17.png)
+![alt text](https://github.com/Agim-dudu/Predictive-Analytic---CO2-Emission/blob/main/Assets/image-17.png?raw=true)
 
 Berdasarkan matriks korelasi untuk fitur numerik yang ditampilkan:
 
@@ -353,59 +354,210 @@ Nantinya standarisasi MinMaxScaler menghasilkan distribusi data yang ada pada re
 
 ## Modeling
 
-Model machine learning yang digunakan untuk masalah ini terdiri dari 5 model yaitu:
+Model machine learning yang digunakan untuk masalah ini terdiri dari 6 model yaitu:
 
-- DecisionTreeRegressor dengan parameter sebagai berikut:
+**1. DecisionTreeRegressor**
 
-  - max_depth = None :  Kedalaman maksimum pohon (default: None, yang berarti pohon akan terus tumbuh hingga semua daun murni atau hingga semua daun memiliki kurang dari min_samples_split sampel).
+- **Cara Membuat Model**:
 
-  - min_samples_split = Jumlah minimum sampel yang diperlukan untuk membagi simpul (default: 2).
+  1.   ```from sklearn.tree import DecisionTreeRegressor```
 
-  - min_samples_leaf = Jumlah minimum sampel yang diperlukan untuk berada di simpul daun (default: 1).
+       - Mengimpor class `DecisionTreeRegressor` dari pustaka scikit-learn.
 
-  - max_features = Jumlah maksimum fitur yang dipertimbangkan untuk pemisahan terbaik (default: None, yang berarti semua fitur dipertimbangkan).
+  2.   ```dt_regressor = DecisionTreeRegressor(min_samples_leaf=1, min_samples_split=2, max_depth=None, max_features=None, random_state=None)```
 
-  - random_state =  Menentukan generator bilangan acak untuk memastikan hasil yang dapat direproduksi (default: None).
+       - Membuat objek dari class `DecisionTreeRegressor` dengan parameter-parameter yang ditentukan.
 
-- K-Nearest Neighbor dengan parameter sebagai berikut:
+          - **Penjelasan Parameter**:
 
-  - n_neighbors = 10 : jumlah tetangga yang digunakan untuk mengukur jarak
+              - `min_samples_leaf=1`: Menentukan jumlah minimum sampel yang harus ada di simpul daun. Jika diatur ke 1 (default), setiap simpul daun bisa memiliki minimal 1 sampel.
 
-- LinearRegression dengan parameter sebagai berikut:
+              - `min_samples_split=2`: Menentukan jumlah minimum sampel yang diperlukan untuk membagi simpul. Jika ada kurang dari 2 sampel di sebuah simpul, maka simpul tersebut tidak akan dibagi lebih lanjut.
 
-  - fit_intercept = True: Menentukan apakah model akan menghitung intercept (konstanta) dari regresi. Jika diatur ke True, model akan memasukkan intercept dalam perhitungan.
+              - `max_depth=None`: Menentukan kedalaman maksimum pohon. Jika diatur ke None, pohon akan tumbuh sampai semua simpul daun murni, atau sampai jumlah sampel di simpul kurang dari `min_samples_split`.
 
-  - n_jobs = None: Menentukan jumlah pekerjaan paralel untuk menghitung (fit) model. None berarti menggunakan satu inti; jika diatur ke -1, akan menggunakan semua inti yang tersedia.
+              - `max_features=None`: Menentukan jumlah maksimum fitur yang dipertimbangkan pada setiap pembagian (split). Jika diatur ke None, semua fitur akan dipertimbangkan.
 
-  - positive = False: Menentukan apakah koefisien regresi harus dibatasi menjadi nilai positif. Jika diatur ke True, model akan memaksa semua koefisien menjadi non-negatif.
+              - `random_state=None`: Menentukan seed untuk generator bilangan acak agar hasil dapat diulang. Jika None, hasil tidak dijamin dapat diulang karena angka acak digunakan tanpa seed tetap.
 
-- Support Vector Regression dengan parameter sebagai berikut:
+  3.   ```dt_regressor.fit(X_train, y_train)```
 
-  - C = 1.0: Parameter regulasi yang mengontrol trade-off antara minimisasi kesalahan pelatihan dan kompleksitas model. Nilai yang lebih tinggi akan menghasilkan model yang lebih kompleks, sedangkan nilai yang lebih rendah dapat menghasilkan model yang lebih sederhana.
+       - Memanggil metode fit untuk melatih model `DecisionTreeRegressor` menggunakan data pelatihan `X_train` (fitur) dan `y_train` (target).
 
-  - epsilon = 0.1: Menentukan margin toleransi di sekitar garis prediksi. Ini berarti bahwa kesalahan di dalam margin ini tidak akan dikenakan penalti. Dengan kata lain, model tidak akan berusaha untuk memperbaiki kesalahan di dalam radius epsilon.
+       - `X_train`: Matriks atau array berisi data fitur yang digunakan untuk melatih model. Setiap baris mewakili satu sampel, dan setiap kolom mewakili satu fitur.
 
-  - gamma = 'scale': Mengontrol pengaruh titik pelatihan individu. Jika diatur ke 'scale', gamma akan dihitung sebagai 1 / (n_features * X.var()). Ini menentukan seberapa jauh pengaruh dari titik data.
+       - `y_train`: Label atau nilai target yang sesuai dengan data fitur dalam `X_train`. Ini adalah nilai yang ingin diprediksi oleh model.
 
-  - kernel = 'rbf': Menggunakan kernel Radial Basis Function (RBF) untuk mengubah data menjadi dimensi yang lebih tinggi, memungkinkan pemisahan yang lebih kompleks. Kernel ini adalah pilihan umum dalam SVM karena kemampuannya untuk menangkap hubungan non-linear.
+       - Selama proses pelatihan, model akan membangun pohon keputusan dengan membagi data ke dalam beberapa simpul berdasarkan pembagian optimal dari fitur-fitur, yang meminimalkan kesalahan prediksi.
 
-- RandomForestRegressor dengan parameter sebagai berikut:
+- **Cara Kerja Model**:
+  - Decision Tree Regressor bekerja dengan membuat pohon keputusan berdasarkan fitur-fitur dataset. Setiap simpul pada pohon dipisahkan menjadi beberapa cabang dengan mencari pemisahan (split) yang terbaik, yang diukur berdasarkan pengurangan varian atau peningkatan informasi. Proses ini berlanjut sampai tidak ada lagi pemisahan yang dapat dilakukan, atau sampai semua simpul daun memiliki kurang dari jumlah minimum sampel untuk dibagi.
 
-  - n_estimators = 50: Menentukan jumlah pohon keputusan (trees) dalam hutan (forest). Semakin banyak pohon yang digunakan, model biasanya akan lebih kuat dan lebih robust, meskipun waktu pelatihan dan prediksi akan meningkat.
+---
 
-  - max_depth = 16: Menentukan kedalaman maksimum setiap pohon dalam hutan. Ini digunakan untuk menghindari overfitting. Semakin dalam pohon, semakin banyak informasi yang dapat dipelajari, tetapi juga meningkatkan risiko model terlalu kompleks.
+**2. K-Nearest Neighbor**
 
-  - random_state = 55: Parameter ini digunakan untuk memastikan reproduktifitas hasil. Dengan mengatur random_state, Anda akan mendapatkan hasil yang sama setiap kali Anda menjalankan kode.
+- **Cara Membuat Model**:
 
-  - n_jobs = -1: Menentukan jumlah inti (cores) yang digunakan untuk menghitung. Jika diatur ke -1, model akan menggunakan semua inti yang tersedia, sehingga mempercepat proses pelatihan.
+  1.   ```from sklearn.neighbors import KNeighborsRegressor```
 
-- AdaBoostRegressor dengan parameter sebagai berikut:
+       - Mengimpor class `KNeighborsRegressor` dari pustaka scikit-learn.
 
-  - estimator =  RF Menentukan model dasar yang digunakan sebagai estimator. Dalam hal ini, model dasar yang digunakan adalah RandomForestRegressor (yang telah didefinisikan sebelumnya dengan nama RF).
+  2.   ```knn = KNeighborsRegressor(n_neighbors=10)```
 
-  - learning_rate = 0.05 Parameter ini mengontrol kontribusi setiap estimator ke model akhir. Dalam hal ini, learning rate diatur menjadi 0.05.
+       - Membuat objek dari class `KNeighborsRegressor` dengan parameter `n_neighbors=10`.
 
-  - random_state = 55 Parameter ini digunakan untuk memastikan bahwa hasil dapat direproduksi. Dengan menetapkan nilai acak, Anda akan mendapatkan hasil yang sama setiap kali Anda menjalankan kode.
+          - **Penjelasan Parameter**:
+
+              - `n_neighbors=10`: Menentukan jumlah tetangga terdekat yang digunakan untuk mengukur jarak antara sampel data. Model akan menggunakan rata-rata nilai target dari 10 tetangga terdekat untuk membuat prediksi.
+
+  3.   ```knn.fit(X_train, y_train)```
+
+       - Memanggil metode fit untuk melatih model `KNeighborsRegressor` menggunakan data pelatihan `X_train` dan `y_train`.
+
+       - `X_train`: Matriks fitur yang digunakan dalam pelatihan model.
+
+       - `y_train`: Label target untuk data pelatihan.
+
+- **Cara Kerja Model**:
+  - K-Nearest Neighbors bekerja dengan mencari sejumlah tetangga terdekat dalam ruang fitur yang memiliki nilai target serupa. Setelah tetangga ditemukan, model akan menggunakan nilai rata-rata dari tetangga tersebut untuk membuat prediksi nilai target untuk data baru.
+
+---
+
+**3. LinearRegression**
+
+- **Cara Membuat Model**:
+
+  1.   ```from sklearn.linear_model import LinearRegression```
+
+       - Mengimpor class `LinearRegression` dari pustaka scikit-learn.
+
+  2.   ```linear_regressor = LinearRegression(fit_intercept = True, n_jobs = None, positive = False)```
+
+       - Membuat objek dari class `LinearRegression` dengan parameter yang ditentukan.
+
+          - **Penjelasan Parameter**:
+
+            - `fit_intercept=True`: Menentukan apakah model akan menghitung intercept (konstanta) dari persamaan regresi. Jika diatur ke True, model akan menghitung intercept, yaitu titik di mana garis regresi memotong sumbu Y.
+
+            - `n_jobs=None`: Menentukan jumlah pekerjaan paralel untuk menghitung model. Jika None, hanya satu core yang digunakan, tetapi jika diatur ke -1, maka model akan menggunakan semua core yang tersedia.
+
+            - `positive=False`: Jika diatur ke True, koefisien regresi akan dipaksa menjadi nilai non-negatif. Ini digunakan dalam kasus di mana nilai negatif dari koefisien tidak diinginkan.
+
+  3.   ```linear_regressor.fit(X_train, y_train)```
+
+       - Memanggil metode fit untuk melatih model `LinearRegression` menggunakan data pelatihan `X_train` dan `y_train`.
+
+       - `X_train`: Matriks fitur untuk melatih model.
+
+       - `y_train`: Nilai target yang sesuai dengan data fitur dalam `X_train`.
+
+- **Cara Kerja Model**:
+  - Linear Regression bekerja dengan menemukan garis lurus yang paling sesuai dengan data pelatihan, dengan cara meminimalkan *mean squared error* antara nilai yang diprediksi dan nilai aktual. Model menghitung koefisien untuk setiap fitur yang digunakan dalam prediksi nilai target, mengikuti persamaan \( Y = aX + b \).
+
+---
+
+**4. Support Vector Regression**
+
+- **Cara Membuat Model**:
+
+  1.   ```from sklearn.svm import SVR```
+
+       - Mengimpor class `SVR` dari pustaka scikit-learn.
+
+  2.   ```svr = SVR(C = 1.0, epsilon = 0.1, gamma = 'scale', kernel = 'rbf')```
+
+       - Membuat objek dari class `SVR` dengan parameter-parameter yang ditentukan.
+
+          - **Penjelasan Parameter**:
+
+              - `C=1.0`: Parameter regulasi yang mengontrol trade-off antara kesalahan pelatihan dan kompleksitas model.
+
+              - `epsilon=0.1`: Menentukan margin toleransi di sekitar garis prediksi. Kesalahan di dalam margin ini tidak akan dikenakan penalti.
+
+              - `gamma='scale'`: Mengontrol pengaruh dari titik data individual pada pemisahan. `scale` adalah nilai default, yang berarti `gamma` dihitung sebagai 1 / (n_features * X.var()).
+
+              - `kernel='rbf'`: Menggunakan kernel Radial Basis Function (RBF) untuk menangkap hubungan non-linear dalam data.
+
+  3.   ```svr.fit(X_train, y_train)```
+
+       - Memanggil metode fit untuk melatih model `SVR` menggunakan data pelatihan `X_train` dan `y_train`.
+
+       - `X_train`: Data fitur yang digunakan dalam pelatihan model.
+
+       - `y_train`: Nilai target yang sesuai dengan `X_train`.
+
+- **Cara Kerja Model**:
+  - Support Vector Regression bekerja dengan menemukan hyperplane terbaik dalam ruang fitur yang memaksimalkan margin antara prediksi dan nilai aktual. Model ini menggunakan kernel RBF untuk menangkap hubungan non-linear dalam data, yang sangat berguna ketika data tidak linier.
+
+---
+
+**5. RandomForestRegressor** 
+
+- **Cara Membuat Model**: 
+
+  1.   ```from sklearn.ensemble import RandomForestRegressor``` 
+
+       - Mengimpor class `RandomForestRegressor` dari pustaka scikit-learn.
+
+  2.   ```RF = RandomForestRegressor(n_estimators=50, max_depth=16, random_state=55, n_jobs=-1)``` 
+
+       - Membuat objek dari class `RandomForestRegressor` dengan parameter yang ditentukan.
+
+          - **Penjelasan Parameter**:
+
+              - `n_estimators=50`: Menentukan jumlah pohon keputusan yang digunakan dalam hutan (forest).
+
+              - `max_depth=16`: Menentukan kedalaman maksimum pohon-pohon keputusan dalam hutan untuk menghindari overfitting.
+
+              - `random_state=55`: Seed generator untuk memastikan hasil dapat diulang.
+
+              - `n_jobs=-1`: Menentukan jumlah core yang digunakan. Jika diatur ke -1, model akan menggunakan semua core yang tersedia.
+
+  3.   ```RF.fit(X_train, y_train)``` 
+
+       - Memanggil metode fit untuk melatih model `RandomForestRegressor` menggunakan data pelatihan `X_train` dan `y_train`.
+
+       - `X_train`: Matriks fitur yang digunakan untuk pelatihan.
+
+       - `y_train`: Nilai target yang sesuai dengan `X_train`.
+
+- **Cara Kerja Model**: 
+  - Random Forest bekerja dengan membangun banyak pohon keputusan (decision trees) secara acak dan menggabungkan hasilnya untuk membuat prediksi. Setiap pohon dilatih pada subset acak dari data pelatihan dan subset acak dari fitur, sehingga mengurangi overfitting. Hasil dari semua pohon kemudian diambil rata-ratanya (regresi) atau suara mayoritas (klasifikasi) untuk menghasilkan prediksi akhir.
+
+---
+
+**6. AdaBoostRegressor**
+
+- **Cara Membuat Model**: 
+
+  1.   ```from sklearn.ensemble import AdaBoostRegressor``` 
+  
+       - Mengimpor class `AdaBoostRegressor` dari pustaka scikit-learn.
+
+  2.   ```boosting_RF = AdaBoostRegressor(estimator= RF, learning_rate=0.05, random_state=55)``` 
+
+       - Membuat objek dari class `AdaBoostRegressor` dengan model dasar (`estimator`) berupa `RandomForestRegressor` yang sudah dibuat sebelumnya.
+
+          - **Penjelasan Parameter**:
+
+            - `estimator=rf_regressor`: Menentukan model dasar yang digunakan sebagai estimator (dalam hal ini adalah `RandomForestRegressor`).
+
+            - `learning_rate=0.05`: Mengontrol seberapa besar kontribusi setiap estimator ke model akhir. Nilai yang lebih rendah membuat model belajar lebih lambat, tetapi lebih halus.
+
+            - `random_state=55`: Memastikan bahwa hasil yang didapat bisa diulang (reproducible).
+
+  3.   ```boosting_RF.fit(X_train, y_train)``` 
+
+       - Memanggil metode fit untuk melatih model `AdaBoostRegressor` menggunakan data pelatihan `X_train` dan `y_train`.
+
+       - `X_train`: Matriks fitur yang digunakan untuk pelatihan.
+
+       - `y_train`: Nilai target yang sesuai dengan `X_train`.
+
+- **Cara Kerja Model**: 
+  - AdaBoost (Adaptive Boosting) adalah algoritma boosting yang bekerja dengan membangun serangkaian model yang secara bertahap mengurangi kesalahan. Pada setiap langkah, model fokus pada kesalahan dari model sebelumnya, sehingga iterasi berikutnya akan memperbaiki kesalahan tersebut. Model ini memberikan bobot lebih pada data yang sulit diprediksi dan menggabungkan hasil dari semua model yang telah dilatih untuk menghasilkan prediksi akhir yang lebih baik. Penggunaan model dasar seperti `RandomForestRegressor` membantu dalam meningkatkan akurasi prediksi karena kekuatan ensemble dari pohon keputusan yang terlatih.
+
 
 **Kelebihan dan Kekurangan 6 model tersebut?**.
 
@@ -495,6 +647,25 @@ Model machine learning yang digunakan untuk masalah ini terdiri dari 5 model yai
 
 Metrik evaluasi yang digunakan dalam analisis ini adalah Mean Squared Error (MSE), yang berfungsi untuk mengukur seberapa besar kesalahan antara nilai aktual dan nilai yang diprediksi oleh model. MSE dihitung dengan cara mengkuadratkan selisih antara nilai aktual dan nilai prediksi, kemudian menghitung rata-ratanya.
 
+**Formula Mean Squared Error :**
+
+![alt text](https://github.com/Agim-dudu/Predictive-Analytic---CO2-Emission/blob/main/Assets/image-21.png?raw=true)
+
+
+**Cara Mean Squared Error bekerja?**
+
+MSE mengukur rata-rata dari kuadrat selisih antara nilai yang diprediksi oleh model dan nilai aktual (ground truth). Rumus MSE pada gambar diatas.
+
+Keterangan:
+
+N = jumlah dataset
+
+yi = nilai sebenarnya
+
+y_pred = nilai prediksi
+
+**Evaluasi Model Machine Learning yang diusulkan**
+
 - Berikut adalah hasil yang diperoleh dari metrik ini, diurutkan dari kesalahan terkecil hingga terbesar:
 
   | Model              | Train MSE | Test MSE  |
@@ -520,30 +691,11 @@ Metrik evaluasi yang digunakan dalam analisis ini adalah Mean Squared Error (MSE
 
   - Dari tabel di atas, dapat dilihat bahwa setiap model menghasilkan prediksi yang bervariasi untuk setiap nilai aktual (y_true). Model K-Nearest Neighbor (KNN) dan Decision Tree memberikan prediksi yang cukup dekat dengan nilai aktual pada beberapa data, sementara Linear Regression dan Random Forest juga menunjukkan hasil yang kompetitif. Model AdaBoost dengan Random Forest (boosting_RF) tampaknya menghasilkan prediksi yang lebih konsisten, dengan kesalahan relatif yang lebih kecil pada nilai prediksi dibandingkan dengan beberapa model lainnya. Secara keseluruhan, performa model dapat bervariasi tergantung pada karakteristik data dan hubungan yang ada antara fitur dan target.
 
-**Formula Mean Squared Error dan cara Mean Squared Error bekerja** 
+## Kesimpulan
+Dari hasil analisis dan evaluasi yang telah dilakukan, dapat disimpulkan bahwa model yang diusulkan berhasil menjawab kedua rumusan masalah yang diajukan. Pertama, melalui analisis multivariate, model mengidentifikasi bahwa Engine Size, Fuel Consumption City, Fuel Consumption Hwy, dan Fuel Consumption Comb merupakan fitur-fitur yang paling berpengaruh terhadap emisi CO2 yang dihasilkan oleh kendaraan. Kedua, model mampu memprediksi seberapa banyak emisi CO2 yang dihasilkan oleh kendaraan berdasarkan fitur-fitur tersebut dengan akurasi yang baik. Dalam pencapaian goals, model yang dikembangkan mencapai tujuan yang diharapkan, yaitu mengetahui fitur yang paling berkorelasi dengan emisi CO2 dan membuat model machine learning yang dapat memprediksi emisi CO2 secara akurat. Hasil evaluasi menunjukkan bahwa model Random Forest dan AdaBoost dengan Random Forest memiliki kesalahan MSE yang rendah, menandakan bahwa mereka efektif dalam melakukan prediksi. Dampak dari solusi yang diterapkan, termasuk analisis visualisasi data dan penerapan berbagai algoritma machine learning, berdampak positif dalam memberikan pemahaman yang lebih mendalam tentang hubungan antar fitur dan emisi CO2. Ini tidak hanya membantu dalam memahami struktur data, tetapi juga dalam pengambilan keputusan bisnis. Misalnya, produsen kendaraan dapat menggunakan informasi ini untuk merancang kendaraan yang lebih ramah lingkungan dengan mempertimbangkan fitur-fitur yang berpengaruh terhadap emisi CO2.
 
-formula Mean Squared Error :
+## Referensi
 
-![alt text](https://github.com/Agim-dudu/Predictive-Analytic---CO2-Emission/blob/main/Assets/image-21.png?raw=true)
+IMPLEMENTASI ALGORITMA REGRESI LINEAR UNTUK MENGUKUR TINGKAT PENEGLUARAN CO2 PADA KENDARAAN BERMOTOR [_( Link Google Scholar )_](https://journal.arteii.or.id/index.php/Mars/article/view/132)
 
-
-**Bagaimana cara Mean Squared Error bekerja?**
-
-Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.
-
-- MSE mengukur rata-rata dari kuadrat selisih antara nilai yang diprediksi oleh model dan nilai aktual (ground truth). Rumus MSE pada gambar diatas.
-
-
-Keterangan:
-
-N = jumlah dataset
-
-yi = nilai sebenarnya
-
-y_pred = nilai prediksi
-
-
-## Daftar Referensi:
-
-
-
+EMISI CO2 KENDARAAN BERMOTOR KAWASAN ALUN-ALUN KOTA BATU [_( Link Google Scholar )_](https://purejournal.ub.ac.id/index.php/pure/article/view/385)
